@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "main": "index.html",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "rm -rf dist && parcel build index.html --no-source-maps --public-url '.' && npm run compile-sprites",
-    "zip": "zip -r bundle.zip dist",
-    "compile-sprites": "spritesheet-js sprites/*.png -f pixi.js -p dist/"
+    "start": "node build.js",
+    "build": "rm -rf dist && NODE_ENV=production node build.js",
+    "zip": "zip -r bundle.zip dist"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -17,6 +16,7 @@
     "spritesheet-js": "^1.2.6"
   },
   "dependencies": {
+    "chokidar": "^3.4.0",
     "lodash": "^4.17.15",
     "pixi.js": "^5.2.3",
     "webfontloader": "^1.6.28"

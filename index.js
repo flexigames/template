@@ -13,7 +13,7 @@ function start() {
         const textures = parseTextures(resources[SPRITESHEET].textures)
     
         app.stage.sortableChildren = true
-    
+
         app.ticker.add(gameLoop)
     
         Entity.init(app.stage, textures)
